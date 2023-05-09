@@ -1,0 +1,241 @@
+<html>
+    <head>
+        <title>horizontalMenuDesign</title>
+        <style>
+            body{
+                margin:0;
+                padding:0;
+
+                display: block;
+                
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+            }
+
+
+            body a{
+                text-decoration: none;
+                color:black;
+            }
+            body a h1{
+                text-align: center;
+
+                padding: 12.5% 0 0 0;
+            }
+            
+            #searchBar{
+                display:inline-flex;
+
+                align-items:center;
+                justify-content: center;
+
+                width:100%;
+            }
+            #inputBar{
+                width: 30em;
+                height: 4em;
+
+                border: 5px solid black;
+                border-radius: 20px;
+
+                margin-right: 0;
+            }
+            #submitButton{
+                width:5em;
+                height:4em;
+
+                color:white;
+                background:black;
+                border-radius: 10px;
+
+                margin-left: 0;
+            }
+
+            #hamburgerButton{
+                width: 100%;
+
+                justify-content: center;
+
+                position: relative;
+            }
+            #buttonImage{
+                width:5em;
+                height:5em;
+
+                border: 1px solid black;
+            }
+            #buttonImage:hover{
+                background:grey;
+            }
+            #buttonImage:active{
+                background:black;
+            }
+            /*#hamburgerButton:hover #hamburgerMenu{
+                opacity: 1;
+                transition: 0.3s;
+            }*/
+
+            #hamburgerMenu{
+                opacity:0;
+                transition:0.3s;
+
+                position:absolute;
+                display:grid;
+                grid-template-columns: 1fr 1fr 1fr;
+
+                width:20em;
+                height: 0;
+
+                left:50%;
+                transform:translate(-50%,0);
+
+                background-color: black;
+
+                border-radius: 20px;
+
+                overflow-y: scroll;
+                
+                padding: 10px;
+            }
+
+            #hamburgerMenu::-webkit-scrollbar{
+                width: 10px;
+            }
+
+            #hamburgerMenu::-webkit-scrollbar-thumb{
+                background-color:beige;
+                border-radius: 50px;
+                background-clip:padding-box;
+                border:2px solid transparent;
+            }
+
+            #hamburgerMenu::-webkit-scrollbar-track{
+                background-color: grey;
+                border-radius: 50px;
+            }
+
+            #innerDiv{
+                position:static;
+
+                display: block; 
+
+                padding: 5px;
+            }
+            #innerDiv:hover{
+                transition:0.1s;
+
+                background: grey;
+            }
+            #innerDiv img{
+                width:5em;
+                height:5em;
+
+                border-radius: 20%;
+                background:white;
+
+                padding:1px;
+            }
+
+            #innerDiv a{
+                text-decoration: none;
+
+                align-items: center;
+                
+                color:white;
+            }
+        </style>
+        <script>
+            var clicked = false;
+
+            function clickIt(){
+                if(clicked == false){
+                    clicked = true;
+                    const element = document.getElementById("hamburgerMenu");
+                    element.style.opacity="1";
+                    element.style.height="20em";
+                }else{
+                    clicked = false;
+                    const element = document.getElementById("hamburgerMenu");
+                    element.style.opacity="0";
+                    element.style.height="0";
+                }
+            }
+        </script>
+    </head>
+    <body>
+            
+        <a href="#"><h1>SEARCH PLUS +</h1></a>
+        <section id="searchBar">
+            <form>
+                <input id="inputBar" type="text" name="search" placeholder="search..."/>
+                <input id="submitButton" type="submit" value="검색" />
+            </form>
+        </section>
+        <div id="hamburgerButton" onclick="clickIt()">
+            <img id="buttonImage" src="icon/free-icon-menu-6054596.png">
+            <nav id="hamburgerMenu">
+                <div id="innerDiv"><a href="#">
+                    <img src="icon/free-icon-e-mail-8261177.png" />
+                    <P>메일</P>
+                </a></div>
+                <div id="innerDiv"><a href="#">
+                    <img src="icon/free-icon-hot-tea-1348961.png" />
+                    <p>카페</p>
+                </a></div>
+                <div id="innerDiv"><a href="#">
+                    <img src="icon/free-icon-blog-8028659.png" />
+                    <p>블로그</p>
+                </a></div>
+                <div id="innerDiv"><a href="#">
+                    <img src="icon/free-icon-qa-2575969.png" />
+                    <p>지식iN</p>
+                </a></div>
+                <div id="innerDiv"><a href="#">
+                    <img src="icon/free-icon-shopping-cart-3144456.png" />
+                    <p>쇼핑</p>
+                </a></div>
+                <div id="innerDiv"><a href="#">
+                    <img src="icon/free-icon-credit-cards-payment-71227.png" />
+                    <p>Pay</p>
+                </a></div>
+                <div id="innerDiv"><a href="#">
+                    <img src="icon/free-icon-smart-tv-7349487.png" />
+                    <P>TV</P>
+                </a></div>
+                <div id="innerDiv"><a href="#">
+                    <img src="icon/free-icon-encyclopedia-3351788.png" />
+                    <p>사전</p>
+                </a></div>
+                <div id="innerDiv"><a href="#">
+                    <img src="icon/free-icon-news-1042782.png" />
+                    <p>뉴스</p>
+                </a></div>
+                <div id="innerDiv"><a href="#">
+                    <img src="icon/free-icon-stock-exchange-app-3781628.png" />
+                    <p>증권</p>
+                </a></div>
+                <div id="innerDiv"><a href="#">
+                    <img src="icon/free-icon-real-estate-2952341.png" />
+                    <p>부동산</p>
+                </a></div>
+                <div id="innerDiv"><a href="#">
+                    <img src="icon/free-icon-placeholder-2340091.png" />
+                    <p>지도</p>
+                </a></div>
+                <div id="innerDiv"><a href="#">
+                    <img src="icon/free-icon-music-player-6527855.png" />
+                    <p>VIBE</p>
+                </a></div>
+                <div id="innerDiv"><a href="#">
+                    <img src="icon/free-icon-book-1164620.png" />
+                    <p>도서</p>
+                </a></div>
+                <div id="innerDiv"><a href="#">
+                    <img src="icon/free-icon-comic-5705544.png" />
+                    <p>웹툰</p>
+                </a></div>
+            </nav>
+        </div>
+    </body>
+</html>
