@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>horizontalMenuDesign</title>
+        <title>hamburgerButtonMenuDesign</title>
         <style>
             body{
                 margin:0;
@@ -41,7 +41,7 @@
 
                 margin-right: 0;
             }
-            #submitButton{
+            #searchButton{
                 width:5em;
                 height:4em;
 
@@ -50,6 +50,7 @@
                 border-radius: 10px;
 
                 margin-left: 0;
+                cursor:pointer;
             }
 
             #hamburgerButton{
@@ -161,6 +162,23 @@
                     element.style.height="0";
                 }
             }
+
+            function searchClick(){
+                //return false;
+                let query = document.getElementById('inputBar').value;
+                
+                let url = "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query="+query;
+                
+                console.log(url);
+                
+                window.open(url);
+            }
+
+            function press(e){
+                if(e.keyCode == 13){
+                    searchClick();
+                }
+            }
         </script>
     </head>
     <body>
@@ -168,70 +186,70 @@
         <a href="#"><h1>SEARCH PLUS +</h1></a>
         <section id="searchBar">
             <form>
-                <input id="inputBar" type="text" name="search" placeholder="search..."/>
-                <input id="submitButton" type="submit" value="검색" />
+                <input id="inputBar" type="text" name="search" placeholder="search..." onkeypress="press(event)"/>
+                <button id="searchButton" type="button" onclick="searchClick()">검색</button>
             </form>
         </section>
         <div id="hamburgerButton" onclick="clickIt()">
             <img id="buttonImage" src="icon/free-icon-menu-6054596.png">
             <nav id="hamburgerMenu">
-                <div id="innerDiv"><a href="#">
+                <div id="innerDiv"><a href="https://mail.naver.com/v2/folders/0/all">
                     <img src="icon/free-icon-e-mail-8261177.png" />
                     <P>메일</P>
                 </a></div>
-                <div id="innerDiv"><a href="#">
+                <div id="innerDiv"><a href="https://section.cafe.naver.com/ca-fe/">
                     <img src="icon/free-icon-hot-tea-1348961.png" />
                     <p>카페</p>
                 </a></div>
-                <div id="innerDiv"><a href="#">
+                <div id="innerDiv"><a href="https://section.blog.naver.com/BlogHome.naver?directoryNo=0&currentPage=1&groupId=0">
                     <img src="icon/free-icon-blog-8028659.png" />
                     <p>블로그</p>
                 </a></div>
-                <div id="innerDiv"><a href="#">
+                <div id="innerDiv"><a href="https://kin.naver.com/">
                     <img src="icon/free-icon-qa-2575969.png" />
                     <p>지식iN</p>
                 </a></div>
-                <div id="innerDiv"><a href="#">
+                <div id="innerDiv"><a href="https://shopping.naver.com/home">
                     <img src="icon/free-icon-shopping-cart-3144456.png" />
                     <p>쇼핑</p>
                 </a></div>
-                <div id="innerDiv"><a href="#">
+                <div id="innerDiv"><a href="https://new-m.pay.naver.com/pcpay?page=1">
                     <img src="icon/free-icon-credit-cards-payment-71227.png" />
                     <p>Pay</p>
                 </a></div>
-                <div id="innerDiv"><a href="#">
+                <div id="innerDiv"><a href="https://tv.naver.com/">
                     <img src="icon/free-icon-smart-tv-7349487.png" />
                     <P>TV</P>
                 </a></div>
-                <div id="innerDiv"><a href="#">
+                <div id="innerDiv"><a href="https://dict.naver.com/">
                     <img src="icon/free-icon-encyclopedia-3351788.png" />
                     <p>사전</p>
                 </a></div>
-                <div id="innerDiv"><a href="#">
+                <div id="innerDiv"><a href="https://news.naver.com/">
                     <img src="icon/free-icon-news-1042782.png" />
                     <p>뉴스</p>
                 </a></div>
-                <div id="innerDiv"><a href="#">
+                <div id="innerDiv"><a href="https://finance.naver.com/">
                     <img src="icon/free-icon-stock-exchange-app-3781628.png" />
                     <p>증권</p>
                 </a></div>
-                <div id="innerDiv"><a href="#">
+                <div id="innerDiv"><a href="https://land.naver.com/">
                     <img src="icon/free-icon-real-estate-2952341.png" />
                     <p>부동산</p>
                 </a></div>
-                <div id="innerDiv"><a href="#">
+                <div id="innerDiv"><a href="https://map.naver.com/v5/?c=15,0,0,0,dh">
                     <img src="icon/free-icon-placeholder-2340091.png" />
                     <p>지도</p>
                 </a></div>
-                <div id="innerDiv"><a href="#">
+                <div id="innerDiv"><a href="https://vibe.naver.com/about/?utm_source=naver_main&utm_medium=naver_main_login_y&utm_campaign=naver_main_redirect">
                     <img src="icon/free-icon-music-player-6527855.png" />
                     <p>VIBE</p>
                 </a></div>
-                <div id="innerDiv"><a href="#">
+                <div id="innerDiv"><a href="https://search.shopping.naver.com/book/home">
                     <img src="icon/free-icon-book-1164620.png" />
                     <p>도서</p>
                 </a></div>
-                <div id="innerDiv"><a href="#">
+                <div id="innerDiv"><a href="https://comic.naver.com/index">
                     <img src="icon/free-icon-comic-5705544.png" />
                     <p>웹툰</p>
                 </a></div>
